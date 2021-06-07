@@ -14,7 +14,9 @@ class BeerDBController extends Controller
      */
     public function index()
     {
-        //
+        $beer = new beerDB();
+        $beer = $beer->getAllBeers();
+        return view('index', compact('beerDB'));
     }
 
     /**
