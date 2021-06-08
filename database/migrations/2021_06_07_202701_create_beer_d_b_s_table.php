@@ -15,6 +15,11 @@ class CreateBeerDBSTable extends Migration
     {
         Schema::create('beer_d_b_s', function (Blueprint $table) {
             $table->id();
+            $table->text('Nom_Biere');
+            $table->double('Prix_Biere');
+            $table->int('Contenance_Biere');
+            $table->double('Degre_alccol_Biere');
+            $table->text('Description');
             $table->timestamps();
         });
     }
