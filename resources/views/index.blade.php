@@ -12,7 +12,6 @@
         <tr>
             <td>{{$beer->Id_Biere}}</td>
             <td>{{$beer->Nom_Biere}}</td>
-            <td>{{$beer->Producteur_Biere}}</td>
             <td>{{$beer->Prix_Biere}}</td>
             <td>{{$beer->Contenance_Biere}}</td>
             <td>{{$beer->Degre_alcool_Biere}}</td>
