@@ -16,7 +16,7 @@ class BeerDBController extends Controller
     {
         $beer = new beerDB();
         $beer = $beer->getAllBeers();
-        return view('index', compact('beerDB'));
+        return view('index', compact('beer'));
     }
 
     /**

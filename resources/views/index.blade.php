@@ -8,7 +8,7 @@
         <th>Degré Alcool</th>
         <th>Description</th>
     </thead>
-    @foreach($beerDB as $beer)
+    @foreach($beer as $beer)
         <tr>
             <td>{{$beer->Id_Biere}}</td>
             <td>{{$beer->Nom_Biere}}</td>
