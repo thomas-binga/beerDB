@@ -6,10 +6,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use DB;
 
-class beerDB extends Model
+class style extends Model
 {
 
     use HasFactory;
-    protected $table = 'Biere';
-    protected $primaryKey = 'Id_Biere';
+    protected $table = 'Style';
+    protected $primaryKey = 'Id_Style';
+    protected $fillable = ['Nom_Style','Couleur'];
+
 }
