@@ -12,8 +12,8 @@ class beerDB extends Model
     use HasFactory;
     protected $table = 'Biere';
     protected $primaryKey = 'Id_Biere';
-    public function getAllBeers(){
+    /*public function getAllBeers(){
         $bieres = DB::table('Biere')->get();
         return $bieres;
-    }
+    }*/
 }
