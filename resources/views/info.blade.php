@@ -295,7 +295,7 @@ html, body {
         <!-- Product Pricing -->
         <div class="product-price">
           <span>{{$beer->Prix_Biere}}$</span>
-          <a href="#" class="cart-btn">Retour à la liste</a>
+          <a href="../beers" class="cart-btn">Retour à la liste</a>
         </div>
       </div>
     </main>

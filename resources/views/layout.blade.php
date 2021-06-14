@@ -36,7 +36,7 @@
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	        	<li class="nav-item {{ Request::is('/') ? 'active' : '' }}"><a href="/web/beerDB/public/" class="nav-link">Home</a></li>
+	        	<li class="nav-item {{ Request::is('/') ? 'active' : '' }}"><a href="../public" class="nav-link">Home</a></li>
 	        	<li class="nav-item {{ Request::is('beers') ? 'active' : '' }}"><a href="beers" class="nav-link">Bieres</a></li>
 	        	<li class="nav-item {{ Request::is('producers') ? 'active' : '' }}"><a href="producers" class="nav-link">Producteurs</a></li>
             <li class="nav-item dropdown">

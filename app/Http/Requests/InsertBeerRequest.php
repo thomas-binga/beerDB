@@ -31,7 +31,7 @@ class InsertBeerRequest extends FormRequest
             'Description' => ['required','string','max:1000'],
             'Id_Producteur' => ['required','numeric','min:0'],
             'Id_Style' => ['required','numeric','min:0'],
-            'image_Biere' => ['required','string']
+            'Image_Biere' => ['required','string']
         ];
     }
 }

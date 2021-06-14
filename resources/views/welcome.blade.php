@@ -32,41 +32,14 @@
         <div class="row">
         	<div class="col-md-12 ftco-animate">
         		<div class="carousel-team owl-carousel">
+					@foreach($bieresnominees as $biere)
         			<div class="item">
-		        		<a href="#" class="team text-center">
-		        			<div class="img" style="background-image: url(images/stylist-1.jpg);"></div>
-		        			<h2>Danica Lewis</h2>
-		        			<span class="position">Hair Stylist</span>
+		        		<a href="getbeer/{{$biere->Id_Biere}}" class="team text-center">
+		        			<div class="img" style="background-image: url({{$biere->Image_Biere}});"></div>
+		        			<h2>{{$biere->Nom_Biere}}</h2>
 		        		</a>
         			</div>
-        			<div class="item">
-	        			<a href="#" class="team text-center">
-		        			<div class="img" style="background-image: url(images/stylist-2.jpg);"></div>
-		        			<h2>Nicole Simon</h2>
-		        			<span class="position">Nail Master</span>
-		        		</a>
-	        		</div>
-	        		<div class="item">
-	        			<a href="#" class="team text-center">
-		        			<div class="img" style="background-image: url(images/stylist-3.jpg);"></div>
-		        			<h2>Cloe Meyer</h2>
-		        			<span class="position">Director</span>
-		        		</a>
-	        		</div>
-	        		<div class="item">
-	        			<a href="#" class="team text-center">
-		        			<div class="img" style="background-image: url(images/stylist-4.jpg);"></div>
-		        			<h2>Rachel Clinton</h2>
-		        			<span class="position">Hair Stylist</span>
-		        		</a>
-	        		</div>
-	        		<div class="item">
-	        			<a href="#" class="team text-center">
-		        			<div class="img" style="background-image: url(images/stylist-5.jpg);"></div>
-		        			<h2>Dave Buff</h2>
-		        			<span class="position">Barber</span>
-		        		</a>
-	        		</div>
+					@endforeach
         		</div>
         	</div>
         </div>

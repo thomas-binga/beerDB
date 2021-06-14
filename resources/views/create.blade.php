@@ -50,17 +50,23 @@
                             @enderror
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control 
-                        @error('Id_Producteur') is-invalid @enderror"
-                        name="Id_Producteur" id="Id_Producteur" placeholder="Id du producteur">
+                        <select name="Id_Producteur" id="Id_Producteur" class="form-control @error('Id_Producteur') is-invalid @enderror">
+                            <option value="">--Veuillez choisir parmi les producteurs ci-dessous--</option>
+                            @foreach($producteurs as $producteur)
+                            <option value="{{$producteur->Id_Producteur}}">{{$producteur->Nom_Producteur}}</option>
+                            @endforeach
+                        </select>
                             @error('Id_Producteur')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control 
-                        @error('Id_Style') is-invalid @enderror"
-                        name="Id_Style" id="Id_Style" placeholder="Id du style">
+                        <select name="Id_Style" id="Id_Style" class="form-control @error('Id_Style') is-invalid @enderror">
+                            <option value="">--Veuillez choisir parmi les styles ci-dessous--</option>
+                            @foreach($styles as $style)
+                            <option value="{{$style->Id_Style}}">{{$style->Nom_Style}}</option>
+                            @endforeach
+                        </select>
                             @error('Id_Style')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
@@ -68,8 +74,8 @@
                     <div class="form-group">
                         <input type="text" class="form-control 
                         @error('image_Biere') is-invalid @enderror"
-                        name="image_Biere" id="image_Biere" placeholder="lien de l'image de la bière">
-                            @error('image_Biere')
+                        name="Image_Biere" id="Image_Biere" placeholder="lien de l'image de la bière">
+                            @error('Image_Biere')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                     </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\beerDB;
+use App\Models\nominatedBeer;
 use Illuminate\Http\Request;
 use App\Http\Requests\InsertBeerRequest;
 
@@ -19,6 +20,14 @@ class BeerDBController extends Controller
         $beer = $beer->getAllBeers();*/
         $beer = BeerDB::all();
         return view('index', compact('beer'));
+    }
+
+    public function welcome()
+    {
+        $nomineesId = nominatedBeer::all()->pluck('Id_Biere')->toArray();
+        $bieresnominees = beerDB::whereIn('Id_Biere', $nomineesId)->get();
+        return view('welcome', compact('bieresnominees'));
+        
     }
 
     /**
@@ -42,7 +51,8 @@ class BeerDBController extends Controller
     {
         //
         beerDB::create($request->all());
-        return view('confirm');
+        $beer = BeerDB::all();
+        return view('index', compact('beer'));
     }
 
     /**
