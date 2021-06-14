@@ -12,8 +12,10 @@ class beerDB extends Model
     use HasFactory;
     protected $table = 'Biere';
     protected $primaryKey = 'Id_Biere';
-    public function getAllBeers(){
+    protected $fillable = ['Nom_Biere','Prix_Biere','Contenance_Biere','Degre_alccol_Biere','Description','Id_Producteur','Id_Style','image_Biere'];
+
+    /*public function getAllBeers(){
         $bieres = DB::table('Biere')->get();
         return $bieres;
-    }
+    }*/
 }
