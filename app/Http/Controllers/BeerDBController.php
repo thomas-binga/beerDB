@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\beerDB;
 use App\Models\nominatedBeer;
+use App\Models\producteur;
 use Illuminate\Http\Request;
 use App\Http\Requests\InsertBeerRequest;
 
@@ -64,7 +65,8 @@ class BeerDBController extends Controller
     public function show(int $id)
     {
         $beer = BeerDB::find($id);
-        return view('info', compact('beer'));
+        $producteur = producteur::where('Id_Producteur', $beer->Id_Producteur)->get();
+        return view('info', compact(['beer', 'producteur']));
     }
 
     /**

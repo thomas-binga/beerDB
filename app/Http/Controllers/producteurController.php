@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\producteur;
+use App\Models\beerDB;
 use Illuminate\Http\Request;
 
 class producteurController extends Controller
@@ -14,8 +15,8 @@ class producteurController extends Controller
      */
     public function index()
     {
-        $producteur = producteur::all();
-        return view('index', compact('producteur'));
+        $producers = producteur::all();
+        return view('producers', compact('producers'));
     }
 
     /**
@@ -48,9 +49,11 @@ class producteurController extends Controller
      * @param  \App\Models\beerDB  $beerDB
      * @return \Illuminate\Http\Response
      */
-    public function show(beerDB $beerDB)
+    public function show(int $id)
     {
-        //
+        $beers = beerDB::where('Id_Producteur', $id)->get();
+        $producer = producteur::find($id);
+        return view('producerlist', compact(['producer','beers']));
     }
 
     /**

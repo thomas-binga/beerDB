@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BeerDBController;
+use App\Http\Controllers\producteurController;
 use App\Http\Controllers\TestFormController;
 
 /*
@@ -19,6 +20,8 @@ use App\Http\Controllers\TestFormController;
 Route::get('/', [BeerDBController::class, 'welcome']);
 Route::get('getbeer/{id}', [BeerDBController::class, 'show']);
 Route::get('beers', [BeerDBController::class, 'index']);
+Route::get('producers', [producteurController::class, 'index']);
+Route::get('getproducer/{id}', [producteurController::class, 'show']);
 Route::get('delbeer/{id}', [BeerDBController::class, 'destroy']);
 Route::resource('beers',BeerDBController::class);
 

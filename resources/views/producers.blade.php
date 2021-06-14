@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('titrePage')
-    Liste des Bieres
+    Liste des Producteurs
 @endsection
 
 @section('titreItem')
@@ -24,8 +24,8 @@
         <div class="row no-gutters slider-text js-fullheight justify-content-center align-items-center">
           <div class="col-lg-12 ftco-animate d-flex align-items-center">
           	<div class="text text-center">
-          		<span class="subheading">Toute nos bieres</span>
-		  				<h1 class="mb-2">Vous pouvez ici naviguer entre nos bieres</h1>
+          		<span class="subheading">Tous nos Producteurs</span>
+		  				<h1 class="mb-2">Vous pouvez ici naviguer entre nos Producteurs</h1>
 							</div>
             </div>
           </div>
@@ -35,29 +35,21 @@
 <table class="table table-bordered table-striped">
     <div class="table-title">
                 <div class="row">
-                    <div class="col-sm-8"><h2>Nos <b>Bieres</b></h2></div>
-                    @auth
+                    <div class="col-sm-8"><h2>Nos <b>Producteurs</b></h2></div>
                     <div class="col-sm-4">
-                        <a type="button" href="ajoutbiere" class="button btn btn-info add-new">Ajouter nouvelle</a>
+                        <a type="button" href="ajoutProducteur" class="button btn btn-info add-new">Ajouter nouvelle</a>
                     </div>
-                    @endauth
                 </div>
             </div>
     <thead> 
         <th>Nom</th>
-        <th>Prix</th>
         <th>Actions</th>
     </thead>
-    @foreach($beer as $beer)
+    @foreach($producers as $producer)
         <tr>
-            <td>{{$beer->Nom_Biere}}</td>
-            <td>{{$beer->Prix_Biere}} €</td>
+            <td>{{$producer->Nom_Producteur}}</td>
             <td>
-                <a href="getbeer/{{$beer->Id_Biere}}" class="visibility" title="Visibility" data-toggle="tooltip"><i class="material-icons">&#xE8F4;</i></a>
-                @auth
-                <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                <a href="delbeer/{{$beer->Id_Biere}}" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-                @endauth
+                <a href="getproducer/{{$producer->Id_Producteur}}" class="visibility" title="Visibility" data-toggle="tooltip"><i class="material-icons">&#xE8F4;</i></a>
             </td>
         </tr>
     @endforeach

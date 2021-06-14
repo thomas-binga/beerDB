@@ -14,10 +14,7 @@ html, body {
   }
   
   /* Columns */
-  .left-column {
-    width: 65%;
-    position: relative;
-  }
+
   
   .right-column {
     width: 35%;
@@ -26,18 +23,7 @@ html, body {
   
   
   /* Left Column */
-  .left-column img {
-    width: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    opacity: 0;
-    transition: all 0.3s ease;
-  }
-  
-  .left-column img.active {
-    opacity: 1;
-  }
+
   
   
   /* Right Column */
@@ -196,35 +182,16 @@ html, body {
   .cart-btn:hover {
     background-color: #64af3d;
   }
+
   
-  /* Responsive */
-  @media (max-width: 940px) {
-    .container {
-      flex-direction: column;
-      margin-top: 60px;
-    }
-  
-    .left-column,
-    .right-column {
-      width: 100%;
-    }
-  
-    .left-column img {
-      width: 300px;
-      right: 0;
-      top: -65px;
-      left: initial;
-    }
-  }
-  
-  @media (max-width: 535px) {
-    .left-column img {
-      width: 220px;
-      top: -85px;
-    }
-  }
-  
-  img{
-      height: fit-content;
-      max-height: 1000px;
-  }
+  .contain {
+    margin-left: 25%;
+    max-width: 400px;
+    max-height: 240px;
+}
+
+/* Resize images */
+.contain img {
+    width: 100%;
+    height: auto;
+}
