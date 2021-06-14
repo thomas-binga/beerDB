@@ -51,7 +51,7 @@
             <td>{{$beer->Nom_Biere}}</td>
             <td>{{$beer->Prix_Biere}} €</td>
             <td>
-                <a href="getbeer?id={{$beer->Nom_Biere}}" class="visibility" title="Visibility" data-toggle="tooltip"><i class="material-icons">&#xE8F4;</i></a>
+                <a href="getbeer/{{$beer->Id_Biere}}" class="visibility" title="Visibility" data-toggle="tooltip"><i class="material-icons">&#xE8F4;</i></a>
                 <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
                 <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
             </td>

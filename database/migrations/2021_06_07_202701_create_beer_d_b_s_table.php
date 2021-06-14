@@ -20,6 +20,7 @@ class CreateBeerDBSTable extends Migration
             $table->int('Contenance_Biere');
             $table->double('Degre_alccol_Biere');
             $table->text('Description');
+            $table->text('Image_Biere')
             $table->timestamps();
         });
     }

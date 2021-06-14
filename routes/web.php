@@ -19,6 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('getbeer/{id}', [BeerDBController::class, 'show']);
 Route::get('beers', [BeerDBController::class, 'index']);
 Route::resource('beers',BeerDBController::class);
 

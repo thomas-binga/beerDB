@@ -51,9 +51,10 @@ class BeerDBController extends Controller
      * @param  \App\Models\beerDB  $beerDB
      * @return \Illuminate\Http\Response
      */
-    public function show(beerDB $beerDB)
+    public function show(int $id)
     {
-        //
+        $beer = BeerDB::find($id);
+        return view('info', compact('beer'));
     }
 
     /**
