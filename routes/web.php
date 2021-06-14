@@ -23,5 +23,17 @@ Route::get('getbeer/{id}', [BeerDBController::class, 'show']);
 Route::get('beers', [BeerDBController::class, 'index']);
 Route::resource('beers',BeerDBController::class);
 
-Route::get('testformulaire', [TestFormController::class, 'getInfos']);
-Route::post('testformulaire', [TestFormController::class, 'postInfos']);
+Route::get('ajoutbiere', [TestFormController::class, 'getInfos']);
+Route::post('ajoutbiere', [TestFormController::class, 'postInfos']);
+
+/*Route::get('/', function () {
+    return view('welcome');
+});*/
+
+/*Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');*/
+
+Route::get('/',[BeerDBController::class,'index']);
+
+require __DIR__.'/auth.php';
