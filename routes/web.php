@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BeerDBController;
+use App\Http\Controllers\TestFormController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +20,7 @@ Route::get('/', function () {
 });
 
 Route::get('beers', [BeerDBController::class, 'index']);
+Route::resource('beers',BeerDBController::class);
+
+Route::get('testformulaire', [TestFormController::class, 'getInfos']);
+Route::post('testformulaire', [TestFormController::class, 'postInfos']);

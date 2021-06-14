@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\beerDB;
 use Illuminate\Http\Request;
+use App\Http\Requests\InsertBeerRequest;
 
 class BeerDBController extends Controller
 {
@@ -27,18 +28,21 @@ class BeerDBController extends Controller
      */
     public function create()
     {
-        //
+        //On retourne la vue contenant le formulaire "create"
+        return view ('create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\InsertBeerRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(InsertBeerRequest $request)
     {
         //
+        beerDB::create($request->all());
+        return view('confirm');
     }
 
     /**
