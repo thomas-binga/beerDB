@@ -21,19 +21,20 @@ Route::get('/', function () {
 
 Route::get('getbeer/{id}', [BeerDBController::class, 'show']);
 Route::get('beers', [BeerDBController::class, 'index']);
+Route::get('delbeer/{id}', [BeerDBController::class, 'destroy']);
 Route::resource('beers',BeerDBController::class);
 
 Route::get('ajoutbiere', [TestFormController::class, 'getInfos']);
 Route::post('ajoutbiere', [TestFormController::class, 'postInfos']);
 
-/*Route::get('/', function () {
+Route::get('/', function () {
     return view('welcome');
-});*/
+});
 
 /*Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');*/
 
-Route::get('/',[BeerDBController::class,'index']);
+//Route::get('/',[BeerDBController::class,'index']);
 
 require __DIR__.'/auth.php';

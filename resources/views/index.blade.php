@@ -37,7 +37,7 @@
                 <div class="row">
                     <div class="col-sm-8"><h2>Nos <b>Bieres</b></h2></div>
                     <div class="col-sm-4">
-                        <button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i>Ajouter nouvelle</button>
+                        <button type="button" href="ajoutbiere" class="btn btn-info add-new"><i class="fa fa-plus"></i>Ajouter nouvelle</button>
                     </div>
                 </div>
             </div>
@@ -53,7 +53,7 @@
             <td>
                 <a href="getbeer/{{$beer->Id_Biere}}" class="visibility" title="Visibility" data-toggle="tooltip"><i class="material-icons">&#xE8F4;</i></a>
                 <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                <a href="delbeer/{{$beer->Id_Biere}}" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
             </td>
         </tr>
     @endforeach
