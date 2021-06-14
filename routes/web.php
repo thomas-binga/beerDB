@@ -23,6 +23,8 @@ Route::get('beers', [BeerDBController::class, 'index']);
 Route::get('producers', [producteurController::class, 'index']);
 Route::get('getproducer/{id}', [producteurController::class, 'show']);
 Route::get('delbeer/{id}', [BeerDBController::class, 'destroy']);
+Route::get('editbeer/{id}', [BeerDBController::class, 'edit']);
+Route::get('updatebeer/{id}', [BeerDBController::class, 'update']);
 Route::resource('beers',BeerDBController::class);
 
 Route::get('ajoutbiere', [TestFormController::class, 'getInfos']);

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\beerDB;
 use App\Models\nominatedBeer;
 use App\Models\producteur;
+use App\Models\style;
 use Illuminate\Http\Request;
 use App\Http\Requests\InsertBeerRequest;
 
@@ -75,9 +76,15 @@ class BeerDBController extends Controller
      * @param  \App\Models\beerDB  $beerDB
      * @return \Illuminate\Http\Response
      */
-    public function edit(beerDB $beerDB)
+    public function edit(int $id)
     {
         //
+        $beer = BeerDB::find($id);
+        //$producteur = producteur::where('Id_Producteur', $beer->Id_Producteur)->get();
+        $styles = style::all();
+        $producteurs = producteur::all();
+        
+        return view('edit', compact(['beer', 'producteurs', 'styles']));
     }
 
     /**
@@ -89,7 +96,8 @@ class BeerDBController extends Controller
      */
     public function update(Request $request, beerDB $beerDB)
     {
-        //
+        $beerDB -> update($request->all());
+        return back()->with('info','le manga a bien été modifié dans la base de données');
     }
 
     /**
