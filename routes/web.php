@@ -34,6 +34,6 @@ Route::post('ajoutbiere', [TestFormController::class, 'postInfos']);
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');*/
 
-Route::get('/',[BeerDBController::class,'index']);
+//Route::get('/',[BeerDBController::class,'index']);
 
 require __DIR__.'/auth.php';

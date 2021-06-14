@@ -17,6 +17,11 @@ html, body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
   }
+
+  img {
+    width: 100%;
+    height: auto;
+}
   
   .container {
     max-width: 1200px;
