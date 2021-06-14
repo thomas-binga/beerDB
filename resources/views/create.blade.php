@@ -56,9 +56,6 @@
                             @error('Id_Producteur')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
-                            @foreach($producteur as $p)
-                                <option value="{{ $p->id }}">{{ $p->name }}</option>
-                            @endforeach
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control 

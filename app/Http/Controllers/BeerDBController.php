@@ -86,8 +86,11 @@ class BeerDBController extends Controller
      * @param  \App\Models\beerDB  $beerDB
      * @return \Illuminate\Http\Response
      */
-    public function destroy(beerDB $beerDB)
+    public function destroy(int $id)
     {
         //
+        $beer = BeerDB::find($id);
+        $beer->delete();
+        return back()->with('info','la bière a bien été supprimé de la base de données');
     }
 }
