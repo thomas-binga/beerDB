@@ -26,7 +26,6 @@
 
         <!-- Product Description -->
         <div class="product-description">
-          <span>{{$beer->Image_Biere}}</span>
           <h1>{{$beer->Nom_Biere}}</h1>
           <p>{{$beer->Description}}</p>
         </div>
@@ -41,6 +40,8 @@
             <div class="color-choose">
               <div>
                 <p>Contenance de {{$beer->Contenance_Biere}} cl.</p>
+                <p>Style: {{$style[0]->Nom_Style}}</p>
+                <p>Couleur: {{$style[0]->Couleur}}</p>
               </div>
             </div>
 

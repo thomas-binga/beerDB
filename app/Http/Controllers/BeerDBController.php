@@ -67,7 +67,8 @@ class BeerDBController extends Controller
     {
         $beer = BeerDB::find($id);
         $producteur = producteur::where('Id_Producteur', $beer->Id_Producteur)->get();
-        return view('info', compact(['beer', 'producteur']));
+        $style = style::where('Id_Style', $beer->Id_Style)->get();
+        return view('info', compact(['beer', 'producteur', 'style']));
     }
 
     /**
@@ -97,7 +98,7 @@ class BeerDBController extends Controller
     public function update(Request $request, beerDB $beerDB)
     {
         $beerDB -> update($request->all());
-        return back()->with('info','le manga a bien été modifié dans la base de données');
+        return back()->with('info','le manga a bien été modifié dans la base de données'.$request);
     }
 
     /**
@@ -110,7 +111,7 @@ class BeerDBController extends Controller
     {
         //
         $beer = BeerDB::find($id);
-        $beer->delete();
+        $beer->delete()->onDelete('cascade');
         return back()->with('info','la bière a bien été supprimé de la base de données');
     }
 }

@@ -41,7 +41,7 @@
         		<div class="carousel-team owl-carousel">
 					@foreach($bieresnominees as $biere)
         			<div class="item">
-		        		<a href="getbeer/{{$biere->Id_Biere}}" class="team text-center">
+		        		<a href="{{route('beers.show', $biere->Id_Biere)}}" class="team text-center">
 		        			<div class="img" style="background-image: url({{$biere->Image_Biere}});"></div>
 		        			<h2>{{$biere->Nom_Biere}}</h2>
 		        		</a>

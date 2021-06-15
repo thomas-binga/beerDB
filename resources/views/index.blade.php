@@ -53,9 +53,9 @@
             <td>{{$beer->Nom_Biere}}</td>
             <td>{{$beer->Prix_Biere}} €</td>
             <td>
-                <a href="getbeer/{{$beer->Id_Biere}}" class="visibility" title="Visibility" data-toggle="tooltip"><i class="material-icons">&#xE8F4;</i></a>
+                <a href="{{route('beers.show', $beer->Id_Biere)}}" class="visibility" title="Visibility" data-toggle="tooltip"><i class="material-icons">&#xE8F4;</i></a>
                 @auth
-                <a class="edit" href="editbeer/{{$beer->Id_Biere}}" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                <a class="edit" href="{{route('beers.edit', $beer->Id_Biere)}}" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
                 <a href="delbeer/{{$beer->Id_Biere}}" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
                 @endauth
             </td>
