@@ -1,4 +1,4 @@
-@extends('layout2')
+@extends('layout')
 
 @section('contenu')
 @if(session() -> has('info'))
@@ -13,7 +13,7 @@
         <div class="row card text-white bg-black">
             <h4 class="card-header">Modifier une bière</h4>
             <div class="card-body">
-                <form action="{{ route('beers.store', $beer->Id_Biere)}}" method="POST">
+                <form action="{{ route('beers.update', $beer->Id_Biere)}}" method="POST">
                     @csrf
                     @method('put')
                     <br>
@@ -81,8 +81,8 @@
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control 
-                        @error('image_Biere') is-invalid @enderror"
-                        name="Image_Biere" id="Image_Biere" value="{{ old('image_Biere', $beer->image_Biere) }}" placeholder="lien de l'image de la bière">
+                        @error('Image_Biere') is-invalid @enderror"
+                        name="Image_Biere" id="Image_Biere" value="{{ old('Image_Biere', $beer->Image_Biere) }}" placeholder="lien de l'image de la bière">
                             @error('Image_Biere')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
